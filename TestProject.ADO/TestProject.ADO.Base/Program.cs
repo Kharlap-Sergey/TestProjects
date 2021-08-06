@@ -6,7 +6,8 @@ namespace TestProject.ADO.Base
     {
         static void Main( string[] args )
         {
-            Console.WriteLine( "Hello World!" );
+            var test = new Test();
+            test.Run();
         }
     }
 }
