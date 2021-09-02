@@ -19,8 +19,9 @@ namespace TestEventViewer
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
             }
+
+            Console.ReadKey();
         }
     }
 }
