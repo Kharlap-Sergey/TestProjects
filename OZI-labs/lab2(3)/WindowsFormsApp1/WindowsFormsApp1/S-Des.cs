@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
         {
             _logger = logger;
         }
-        
+
         static int[] P10 = new int[]
         {
             3, 5, 2, 7, 4, 10, 1, 9, 8, 6
@@ -22,11 +22,12 @@ namespace WindowsFormsApp1
 
         static int[] IP = new int[]
         {
-            2,6,3,1,4,8,5,7
+            2, 6, 3, 1, 4, 8, 5, 7
         };
+
         static int[] IPR = new int[]
         {
-            4,1,3,5,7,2,8,6
+            4, 1, 3, 5, 7, 2, 8, 6
         };
 
         private static int[] P10_with1S = new int[]
@@ -46,12 +47,14 @@ namespace WindowsFormsApp1
 
         static int[] Epr = new int[]
         {
-            4,1,2,3,2,3,4,1
+            4, 1, 2, 3, 2, 3, 4, 1
         };
+
         static int[] P4 = new int[]
         {
-            2,4,3,1
+            2, 4, 3, 1
         };
+
         public string K1 { get; set; }
         public string K2 { get; set; }
 
@@ -86,15 +89,26 @@ namespace WindowsFormsApp1
             this.K2 = k2;
         }
 
+        public char Encrypt(string c)
+        {
+            return Encrypt((char) Convert.ToInt32(c, 2));
+        }
+
         public char Encrypt(char c)
         {
             return SDes(c, this.K1, this.K2);
+        }
+
+        public char Decrypt(string c)
+        {
+            return Decrypt((char) Convert.ToInt32(c, 2));
         }
 
         public char Decrypt(char c)
         {
             return SDes(c, this.K2, this.K1);
         }
+
         public char SDes(char c, string k1 = null, string k2 = null)
         {
             k1 = k1 ?? this.K1;
@@ -102,7 +116,7 @@ namespace WindowsFormsApp1
 
             _logger.Log($"symbol - {c}");
 
-            int ascii = (int)c;
+            int ascii = (int) c;
             _logger.Log($"symbol in ASCII - {ascii}");
 
             var bytes = Convert.ToString(ascii, 2);
@@ -110,6 +124,7 @@ namespace WindowsFormsApp1
             {
                 bytes = "0" + bytes;
             }
+
             _logger.Log($"symbol in bytes - {bytes}");
 
             //ip
@@ -162,7 +177,7 @@ namespace WindowsFormsApp1
             var p4 = ApplyP(slsr, P4);
             _logger.Log($"p4 {p4}");
 
-            return Xor(L, p4)+R;
+            return Xor(L, p4) + R;
         }
 
 
@@ -182,6 +197,7 @@ namespace WindowsFormsApp1
 
             return ToBiteString(S[rowI, columnI], 2);
         }
+
         public string SR(string r)
         {
             var temp = SAny(r);
@@ -210,14 +226,15 @@ namespace WindowsFormsApp1
 
             return new Tuple<int, int>(rowI, columnI);
         }
+
         public static string GetL(string s)
         {
-            return s.Substring(0, s.Length/2);
+            return s.Substring(0, s.Length / 2);
         }
 
         public static string GetR(string s)
         {
-            return s.Substring(s.Length/2);
+            return s.Substring(s.Length / 2);
         }
 
         public static string Xor(string a, string b)
@@ -231,6 +248,7 @@ namespace WindowsFormsApp1
 
             return res;
         }
+
         public string ApplyP(string key, int[] p)
         {
             var s = "";
