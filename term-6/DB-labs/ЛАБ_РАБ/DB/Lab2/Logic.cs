@@ -1,5 +1,7 @@
 ﻿using DbHelper;
 using Models;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Lab2
 {
@@ -28,14 +30,26 @@ select * from employes
 
         public static int CreateNewEmploye(Employe employe)
         {
-            return 0;
-        } 
+            using var con = new SqlConnection(ConnectionString);
+            con.Open();
+            using var cmd = new SqlCommand("InsEmployee", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@LName", employe.Surname);
+            cmd.Parameters.AddWithValue("@FName", employe.Name);
+            cmd.Parameters.AddWithValue("@MName", employe.FatherName);
+
+            // Последний параметр является выходным (output)
+            cmd.Parameters.Add(new SqlParameter("@EmployeeID", SqlDbType.Int, 4));
+            cmd.Parameters["@EmployeeID"].Direction = ParameterDirection.Output;
+
+            cmd.ExecuteNonQuery();
+            return (int)cmd.Parameters["@EmployeeID"].Value;
+        }
 
         public static int GetCountOfAllEmployes()
         {
-            int count = 0;
-
-            return count;
+            var provider = new DbProvider(ConnectionString);
+            return provider.ExecuteScalarCommand<int>("SELECT COUNT (*) FROM Employes");
         }
     }
 }
