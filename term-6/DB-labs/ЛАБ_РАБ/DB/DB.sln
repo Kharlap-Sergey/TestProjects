@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32112.339
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2", "Lab2\Lab2.csproj", "{D0DC3DC0-9D85-4B86-8525-D4583CB2D0F4}"
 EndProject
@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbHelper", "DbHelper\DbHelp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{82C19394-F726-485C-9449-4CBBC5BE0B1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "Lab3\Lab3.csproj", "{09C72C61-E325-4BC5-BD08-9CB5A40F43DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab3", "Lab3\Lab3.csproj", "{09C72C61-E325-4BC5-BD08-9CB5A40F43DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4", "Lab4\Lab4.csproj", "{C4153D0C-3FD9-4D06-8FD9-5CF4BC3DB917}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{09C72C61-E325-4BC5-BD08-9CB5A40F43DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09C72C61-E325-4BC5-BD08-9CB5A40F43DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09C72C61-E325-4BC5-BD08-9CB5A40F43DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4153D0C-3FD9-4D06-8FD9-5CF4BC3DB917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4153D0C-3FD9-4D06-8FD9-5CF4BC3DB917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4153D0C-3FD9-4D06-8FD9-5CF4BC3DB917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4153D0C-3FD9-4D06-8FD9-5CF4BC3DB917}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
