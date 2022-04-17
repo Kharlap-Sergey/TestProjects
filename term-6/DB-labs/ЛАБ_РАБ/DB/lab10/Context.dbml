@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB2" Class="ContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SIARHEI-KHARLAP\SQLEXPRESS;Initial Catalog=DB2;Integrated Security=True" SettingsObjectName="lab10.Properties.Settings" SettingsPropertyName="DB2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HISTORIES" Member="HISTORies">
+    <Type Name="HISTORy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HISTORY_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_DELETED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="HISTORy_HISTORY_PRODUCT" Member="HISTORY_PRODUCTs" ThisKey="ID" OtherKey="HISTORY_ID" Type="HISTORY_PRODUCT" />
+      <Association Name="HISTORY_TYPE_HISTORy" Member="HISTORY_TYPE" ThisKey="HISTORY_TYPE_ID" OtherKey="ID" Type="HISTORY_TYPE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HISTORY_PRODUCT" Member="HISTORY_PRODUCTs">
+    <Type Name="HISTORY_PRODUCT">
+      <Column Name="HISTORY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRODUCT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WAREHOUSE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HISTORy_HISTORY_PRODUCT" Member="HISTORy" ThisKey="HISTORY_ID" OtherKey="ID" Type="HISTORy" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PRODUCT_HISTORY_PRODUCT" Member="PRODUCT" ThisKey="PRODUCT_ID" OtherKey="ID" Type="PRODUCT" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HISTORY_TYPES" Member="HISTORY_TYPEs">
+    <Type Name="HISTORY_TYPE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="HISTORY_TYPE_HISTORy" Member="HISTORies" ThisKey="ID" OtherKey="HISTORY_TYPE_ID" Type="HISTORy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOCATIONS" Member="LOCATIONs">
+    <Type Name="LOCATION">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COUNTRY_CODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LOCATION_1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LOCATION_2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LOCATION_3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="LOCATION_WAREHOUSE" Member="WAREHOUSEs" ThisKey="ID" OtherKey="LOCATION_ID" Type="WAREHOUSE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCT_CATEGORIES" Member="PRODUCT_CATEGORies">
+    <Type Name="PRODUCT_CATEGORy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCT_CATEGORy_PRODUCT" Member="PRODUCTs" ThisKey="ID" OtherKey="PRODUCT_CATEGORY_ID" Type="PRODUCT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCTS" Member="PRODUCTs">
+    <Type Name="PRODUCT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_CATEGORY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_DELETED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCT_HISTORY_PRODUCT" Member="HISTORY_PRODUCTs" ThisKey="ID" OtherKey="PRODUCT_ID" Type="HISTORY_PRODUCT" />
+      <Association Name="PRODUCT_WAREHOUSE_PRODUCT" Member="WAREHOUSE_PRODUCTs" ThisKey="ID" OtherKey="PRODUCT_ID" Type="WAREHOUSE_PRODUCT" />
+      <Association Name="PRODUCT_CATEGORy_PRODUCT" Member="PRODUCT_CATEGORy" ThisKey="PRODUCT_CATEGORY_ID" OtherKey="ID" Type="PRODUCT_CATEGORy" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WAREHOUSE_PRODUCT" Member="WAREHOUSE_PRODUCTs">
+    <Type Name="WAREHOUSE_PRODUCT">
+      <Column Name="WAREHOUSE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRODUCT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCT_WAREHOUSE_PRODUCT" Member="PRODUCT" ThisKey="PRODUCT_ID" OtherKey="ID" Type="PRODUCT" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="WAREHOUSE_WAREHOUSE_PRODUCT" Member="WAREHOUSE" ThisKey="WAREHOUSE_ID" OtherKey="ID" Type="WAREHOUSE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WAREHOUSES" Member="WAREHOUSEs">
+    <Type Name="WAREHOUSE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LOCATION_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="WAREHOUSE_WAREHOUSE_PRODUCT" Member="WAREHOUSE_PRODUCTs" ThisKey="ID" OtherKey="WAREHOUSE_ID" Type="WAREHOUSE_PRODUCT" />
+      <Association Name="LOCATION_WAREHOUSE" Member="LOCATION" ThisKey="LOCATION_ID" OtherKey="ID" Type="LOCATION" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>
