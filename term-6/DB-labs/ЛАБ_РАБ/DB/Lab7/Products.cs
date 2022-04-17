@@ -88,5 +88,11 @@ namespace Lab7
                 //pRODUCTCATEGORIESBindingSource1.DataSource = this.db2DataSet.PRODUCT_CATEGORIES;
             };
         }
+
+        private void report_btn_Click(object sender, EventArgs e)
+        {
+            var form = new Report();
+            form.Show(this);
+        }
     }
 }

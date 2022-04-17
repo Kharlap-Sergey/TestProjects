@@ -55,10 +55,11 @@ namespace Lab7
             this.pRICETextBox = new System.Windows.Forms.TextBox();
             this.pRODUCT_CATEGORY_IDTextBox = new System.Windows.Forms.TextBox();
             this.productCat_combo = new System.Windows.Forms.ComboBox();
+            this.pRODUCTCATEGORIESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pRODUCTCATEGORIESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pRODUCT_CATEGORIESTableAdapter = new Lab7.Db2DataSetTableAdapters.PRODUCT_CATEGORIESTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
-            this.pRODUCTCATEGORIESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.report_btn = new System.Windows.Forms.Button();
             nAMELabel = new System.Windows.Forms.Label();
             pRICELabel = new System.Windows.Forms.Label();
             pRODUCT_CATEGORY_IDLabel = new System.Windows.Forms.Label();
@@ -66,8 +67,8 @@ namespace Lab7
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTSBindingNavigator)).BeginInit();
             this.pRODUCTSBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTCATEGORIESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTCATEGORIESBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTCATEGORIESBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nAMELabel
@@ -288,6 +289,11 @@ namespace Lab7
             this.productCat_combo.ValueMember = "ID";
             this.productCat_combo.SelectedIndexChanged += new System.EventHandler(this.productCat_combo_SelectedIndexChanged);
             // 
+            // pRODUCTCATEGORIESBindingSource1
+            // 
+            this.pRODUCTCATEGORIESBindingSource1.DataMember = "PRODUCT_CATEGORIES";
+            this.pRODUCTCATEGORIESBindingSource1.DataSource = this.db2DataSet;
+            // 
             // pRODUCTCATEGORIESBindingSource
             // 
             this.pRODUCTCATEGORIESBindingSource.DataMember = "PRODUCT_CATEGORIES";
@@ -307,16 +313,22 @@ namespace Lab7
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pRODUCTCATEGORIESBindingSource1
+            // report_btn
             // 
-            this.pRODUCTCATEGORIESBindingSource1.DataMember = "PRODUCT_CATEGORIES";
-            this.pRODUCTCATEGORIESBindingSource1.DataSource = this.db2DataSet;
+            this.report_btn.Location = new System.Drawing.Point(501, 145);
+            this.report_btn.Name = "report_btn";
+            this.report_btn.Size = new System.Drawing.Size(75, 23);
+            this.report_btn.TabIndex = 9;
+            this.report_btn.Text = "report";
+            this.report_btn.UseVisualStyleBackColor = true;
+            this.report_btn.Click += new System.EventHandler(this.report_btn_Click);
             // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.report_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.productCat_combo);
             this.Controls.Add(pRODUCT_CATEGORY_IDLabel);
@@ -334,8 +346,8 @@ namespace Lab7
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTSBindingNavigator)).EndInit();
             this.pRODUCTSBindingNavigator.ResumeLayout(false);
             this.pRODUCTSBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTCATEGORIESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTCATEGORIESBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTCATEGORIESBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,7 +356,7 @@ namespace Lab7
         #endregion
 
         private Db2DataSet db2DataSet;
-        private System.Windows.Forms.BindingSource pRODUCTSBindingSource;
+        public System.Windows.Forms.BindingSource pRODUCTSBindingSource;
         private Db2DataSetTableAdapters.PRODUCTSTableAdapter pRODUCTSTableAdapter;
         private Db2DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator pRODUCTSBindingNavigator;
@@ -368,5 +380,6 @@ namespace Lab7
         private Db2DataSetTableAdapters.PRODUCT_CATEGORIESTableAdapter pRODUCT_CATEGORIESTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource pRODUCTCATEGORIESBindingSource1;
+        private System.Windows.Forms.Button report_btn;
     }
 }
