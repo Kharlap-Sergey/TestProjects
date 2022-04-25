@@ -38,7 +38,12 @@ namespace lab10
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var form = new Products
+            {
+                Context = Context
+            };
 
+            form.Show(this);
         }
     }
 }

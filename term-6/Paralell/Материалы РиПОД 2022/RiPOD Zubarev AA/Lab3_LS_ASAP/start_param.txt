@@ -1,0 +1,63 @@
+Count operation: 12
+Count types of operations: 2
+Type 1: 1 3 5 6 8 9 10
+Type 2: 2 4 7 11 12
+Count processors for Type 1: 1
+Count processors for Type 2: 1 
+Table H:
+0 0 0 1 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 1 0 0 0 0 0
+0 0 0 0 0 0 1 0 0 0 0 0
+0 0 0 0 1 0 0 0 0 0 0 0
+0 0 0 0 0 1 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 0 1 0 0 0
+0 0 0 0 0 0 0 0 0 0 1 0
+0 0 0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0 0 0 0 0
+
+Count operation: 11
+Count types of operations: 2
+Type 1: 1 4 6 8 9
+Type 2: 2 3 5 7 10 11
+Count processors for Type 1: 1
+Count processors for Type 2: 1 
+Table H:
+0 0 0 0 0 1 0 0 0 0 0
+0 0 0 0 0 1 0 0 0 0 0
+0 0 0 0 0 0 1 0 0 0 0
+0 0 0 0 0 0 0 1 0 0 0
+0 0 0 0 0 0 0 0 0 1 0
+0 0 0 0 0 0 1 0 0 0 0
+0 0 0 0 0 0 0 1 0 0 0
+0 0 0 0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0 0 0 0
+
+Count operation: 10
+Count types of operations: 2
+Type 1: 2 4 5 8 9
+Type 2: 1 3 6 7 10 
+Count processors for Type 1: 1
+Count processors for Type 2: 1 
+Table H:
+0 0 0 0 0 1 0 0 0 0 0
+0 0 0 0 1 0 0 0 0 0 0
+0 0 0 0 1 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 1 0
+0 0 0 0 0 0 1 0 0 0 0
+0 0 0 0 0 0 1 0 0 0 0
+0 0 0 0 0 0 0 1 0 0 0
+0 0 0 0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 0 0 1 0
+0 0 0 0 0 0 0 0 0 0 0s
+
+
+
+
+
+
+
