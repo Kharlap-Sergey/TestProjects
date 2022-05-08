@@ -40,7 +40,7 @@ namespace CourseWork
             this.cancel_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.save_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.add_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.productCategories_panal = new System.Windows.Forms.Panel();
+            this.productCategories_panal = new System.Windows.Forms.FlowLayoutPanel();
             this.pages_tabControl.SuspendLayout();
             this.productCategories_tabPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -183,6 +183,6 @@ namespace CourseWork
         private System.Windows.Forms.ToolStripMenuItem cancel_menuBtn;
         private System.Windows.Forms.ToolStripMenuItem save_menuBtn;
         private System.Windows.Forms.ToolStripMenuItem add_menuBtn;
-        private System.Windows.Forms.Panel productCategories_panal;
+        private System.Windows.Forms.FlowLayoutPanel productCategories_panal;
     }
 }

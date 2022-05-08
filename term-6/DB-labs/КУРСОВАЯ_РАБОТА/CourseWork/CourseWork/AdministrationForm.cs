@@ -20,6 +20,9 @@ namespace CourseWork
         public AdministrationForm()
         {
             InitializeComponent();
+            productCategories_panal.AutoScroll = true;
+            productCategories_panal.FlowDirection = FlowDirection.TopDown;
+            productCategories_panal.WrapContents = false;
         }
 
         private void cancel_menuBtn_Click(object sender, EventArgs e)
@@ -59,9 +62,8 @@ namespace CourseWork
 
         private void UpdatePresenter()
         {
-            var service = new ProductsService();
-            var products = service.GetProducts();
-            var productCategories = service.GetProductCategories();
+            var products = _productsService.GetProducts();
+            var productCategories = _productsService.GetProductCategories();
             this.productCategories_panal.Controls.Clear();
             productCategories.ForEach(
                 cat => this.productCategories_panal.Controls.Add(
@@ -100,18 +102,27 @@ namespace CourseWork
                 },
                 pc =>
                 {
-                    var categoryWithProducts = _productsService.GetProductCategory(pc.Id, true);
-
-                    if (categoryWithProducts.Products != null && categoryWithProducts.Products.Any())
+                    try
                     {
-                        if(FormHelper.ShowYesOrNow("Warning", "Are you sure?\nIt will cause cascade products deleting!"))
-                        {
-                            _productsService.DeleteProductCategoryWithCascade(pc);
-                        }
-                        return;
-                    }
+                        var categoryWithProducts = _productsService.GetProductCategory(pc.Id, true);
 
-                    _productsService.DeleteProductCategory(pc);
+                        if (categoryWithProducts.Products != null && categoryWithProducts.Products.Any())
+                        {
+                            if (FormHelper.ShowYesOrNow("Warning",
+                                "Are you sure?\nIt will cause cascade products deleting!"))
+                            {
+                                _productsService.DeleteProductCategoryWithCascade(pc);
+                            }
+
+                            return;
+                        }
+
+                        _productsService.DeleteProductCategory(pc);
+                    }
+                    finally
+                    {
+                        UpdatePresenter();
+                    }
                 }
             );
             productCategoryEditor.Show();

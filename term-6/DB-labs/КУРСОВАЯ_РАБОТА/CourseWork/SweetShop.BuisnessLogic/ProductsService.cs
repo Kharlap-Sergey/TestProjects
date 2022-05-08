@@ -107,7 +107,8 @@ namespace SweetShop.BusinessLogic
 
         public ProductCategory DeleteProductCategory(ProductCategory pc)
         {
-            var removed = _context.PRODUCT_CATEGORIES.Remove(ConvertHelper.Convert(pc));
+            var toRemove = _context.PRODUCT_CATEGORIES.First(pcd => pcd.ID == pc.Id);
+            var removed = _context.PRODUCT_CATEGORIES.Remove(toRemove);
             _context.SaveChanges();
             return ConvertHelper.Convert(removed);
         }
