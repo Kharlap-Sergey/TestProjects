@@ -115,7 +115,10 @@ namespace SweetShop.BusinessLogic
 
         public void DeleteProductCategoryWithCascade(ProductCategory pc)
         {
-            //_context.
+            if (pc == null)
+                throw new ArgumentNullException(nameof(pc));
+
+            _context.SOFT_PRODUCT_CATEGORY_DELETE(pc.Id);
         }
     }
 }

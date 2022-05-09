@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CourseWork.Domain;
+using CourseWork.Domain.Models;
 using SweetShop.Models.Entities;
 
 namespace SweetShop.BusinessLogic
 {
     public static class ConvertHelper
     {
-        public static ProductCategory Convert(PRODUCT_CATEGORIES productCategory)
+        public static ProductCategory Convert(PRODUCT_CATEGORIES productCategories)
         {
-            if (productCategory == null) throw new ArgumentNullException(nameof(productCategory));
+            if (productCategories == null) throw new ArgumentNullException(nameof(productCategories));
 
             return new ProductCategory
             {
-                Id = productCategory.ID,
-                Name = productCategory.NAME
+                Id = productCategories.ID,
+                Name = productCategories.NAME
             };
         }
 
@@ -32,13 +33,13 @@ namespace SweetShop.BusinessLogic
             };
         }
 
-        public static Product Convert(PRODUCT product, PRODUCT_CATEGORIES productCategory = null)
+        public static Product Convert(PRODUCT product, PRODUCT_CATEGORIES productCategories = null)
         {
             if (product == null) throw new ArgumentNullException(nameof(product));
 
             ProductCategory category = null;
-            if (productCategory != null)
-                category = Convert(productCategory);
+            if (productCategories != null)
+                category = Convert(productCategories);
 
             return new Product()
             {
