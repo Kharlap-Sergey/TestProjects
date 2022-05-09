@@ -50,5 +50,18 @@ namespace SweetShop.BusinessLogic
                 Price = product.PRICE
             };
         }
+
+        public static PRODUCT Convert(Product product)
+        {
+            if (product == null) throw new ArgumentNullException(nameof(product));
+
+            return new PRODUCT
+            {
+                ID = product.Id,
+                NAME = product.Name,
+                PRODUCT_CATEGORY_ID = product.CategoryId,
+                PRICE = product.Price
+            };
+        }
     }
 }

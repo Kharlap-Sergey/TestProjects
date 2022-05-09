@@ -23,6 +23,10 @@ namespace CourseWork
             productCategories_panal.AutoScroll = true;
             productCategories_panal.FlowDirection = FlowDirection.TopDown;
             productCategories_panal.WrapContents = false;
+
+            products_panel.AutoScroll = true;
+            products_panel.FlowDirection = FlowDirection.TopDown;
+            products_panel.WrapContents = false;
         }
 
         private void cancel_menuBtn_Click(object sender, EventArgs e)
@@ -65,35 +69,86 @@ namespace CourseWork
             var products = _productsService.GetProducts();
             var productCategories = _productsService.GetProductCategories();
             this.productCategories_panal.Controls.Clear();
+            products_panel.Controls.Clear();
+            products.ForEach(
+                product => this.products_panel.Controls.Add(
+                    new ProductView(product, ProductEditHandle)
+                )
+            );
             productCategories.ForEach(
                 cat => this.productCategories_panal.Controls.Add(
-                    new ProductCategoryView(cat, EditHandle)
+                    new ProductCategoryView(cat, ProductCategoryEditHandle)
                     )
                 );
         }
 
         private void New()
         {
-            if (pages_tabControl.TabIndex == productCategories_tabPage.TabIndex)
+            if (pages_tabControl.SelectedIndex == productCategories_tabPage.TabIndex)
             {
                 NewProductCategory();
                 return;
             }
+            if (pages_tabControl.SelectedIndex == products_tabPage.TabIndex)
+            {
+                NewProduct();
+                return;
+            }
         }
+
+        #region product
+        private void NewProduct()
+        {
+            ProductEditHandle(new Product(), (pc) => UpdatePresenter());
+        }
+
+        private void ProductEditHandle(Product product, Action<Product> postAction)
+        {
+            var productEditor = new ProductEditor(
+                product,
+                _productsService.GetProductCategories(),
+                (p) =>
+                {
+                    ExecuteUnderCatch(_);
+
+                    void _()
+                    {
+                        _productsService.AddOrUpdateProduct(p);
+                        postAction.Invoke(p);
+                    }
+                },
+                p =>
+                {
+                    try
+                    {
+                        _productsService.DeleteProduct(p.Id);
+                    }
+                    finally
+                    {
+                        UpdatePresenter();
+                    }
+                }
+            );
+            productEditor.Show();
+        }
+
+        #endregion
+
+        #region product category
 
         private void NewProductCategory()
         {
-            EditHandle(new ProductCategory(), (pc) => UpdatePresenter());
+            ProductCategoryEditHandle(new ProductCategory(), (pc) => UpdatePresenter());
         }
 
-        private void EditHandle(ProductCategory productCategory, Action<ProductCategory> postAction)
+        private void ProductCategoryEditHandle(ProductCategory productCategory, Action<ProductCategory> postAction)
         {
             var productCategoryEditor = new ProductCategoryEditor(
                 productCategory,
                 (pc) =>
                 {
                     ExecuteUnderCatch(_);
-                    
+
                     void _()
                     {
                         _productsService.AddOrUpdateCategory(pc);
@@ -127,6 +182,9 @@ namespace CourseWork
             );
             productCategoryEditor.Show();
         }
+
+        #endregion
+
 
         private void ExecuteUnderCatch(Action action)
         {

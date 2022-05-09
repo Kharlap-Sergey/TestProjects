@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Text.RegularExpressions;
 using CourseWork.Domain;
 using SweetShop.Models.Entities;
 
@@ -17,27 +18,49 @@ namespace SweetShop.BusinessLogic
         {
             _context = new SweetShopEntities();
         }
+
+        #region product
+
         public List<Product> GetProducts()
         {
             var context = new SweetShopEntities();
 
             var temp = context.PRODUCTS.Join(
-                    context.PRODUCT_CATEGORIES,
-                    p => p.PRODUCT_CATEGORY_ID,
-                    pc => pc.ID,
-                    (p, pc) =>
-                        new
-                        {
-                            Product = p,
-                            Category = pc
-                        }
-                ).ToList();
+                context.PRODUCT_CATEGORIES,
+                p => p.PRODUCT_CATEGORY_ID,
+                pc => pc.ID,
+                (p, pc) =>
+                    new
+                    {
+                        Product = p,
+                        Category = pc
+                    }
+            ).ToList();
             return temp
                 .Select(
                     join => ConvertHelper.Convert(join.Product, join.Category)
                 )
                 .ToList();
         }
+
+        public void AddOrUpdateProduct(Product product)
+        {
+            _context.PRODUCTS.AddOrUpdate(ConvertHelper.Convert(product));
+            _context.SaveChanges();
+        }
+
+        public Product DeleteProduct(int productId)
+        {
+            var toRemove = _context.PRODUCTS.First(pcd => pcd.ID == productId);
+            var removed = _context.PRODUCTS.Remove(toRemove);
+            _context.SaveChanges();
+            return ConvertHelper.Convert(removed);
+        }
+
+        #endregion
+
+
+        #region product category
 
         public List<ProductCategory> GetProductCategories(bool includeProducts = false)
         {
@@ -120,5 +143,8 @@ namespace SweetShop.BusinessLogic
 
             _context.SOFT_PRODUCT_CATEGORY_DELETE(pc.Id);
         }
+
+        #endregion
+
     }
 }

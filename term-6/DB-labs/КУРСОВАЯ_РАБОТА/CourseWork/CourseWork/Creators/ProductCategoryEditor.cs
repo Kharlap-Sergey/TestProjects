@@ -46,6 +46,9 @@ namespace CourseWork.Creators
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
+            if(!FormHelper.ShowYesOrNow("The product category will be permanently deleted", "Warning"))
+                return;
+
             this._deleteHandler.Invoke(Category);
             this.Close();
         }
