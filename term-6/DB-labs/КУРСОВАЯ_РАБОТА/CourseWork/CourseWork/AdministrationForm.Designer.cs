@@ -31,24 +31,27 @@ namespace CourseWork
         {
             this.pages_tabControl = new System.Windows.Forms.TabControl();
             this.productCategories_tabPage = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.productCategories_panal = new System.Windows.Forms.FlowLayoutPanel();
             this.products_tabPage = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.products_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.shops_tabPage = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.products_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.cancel_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.save_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.add_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.shops_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.pages_tabControl.SuspendLayout();
             this.productCategories_tabPage.SuspendLayout();
             this.products_tabPage.SuspendLayout();
+            this.shops_tabPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +59,7 @@ namespace CourseWork
             // 
             this.pages_tabControl.Controls.Add(this.productCategories_tabPage);
             this.pages_tabControl.Controls.Add(this.products_tabPage);
+            this.pages_tabControl.Controls.Add(this.shops_tabPage);
             this.pages_tabControl.Location = new System.Drawing.Point(12, 37);
             this.pages_tabControl.Name = "pages_tabControl";
             this.pages_tabControl.SelectedIndex = 0;
@@ -73,6 +77,16 @@ namespace CourseWork
             this.productCategories_tabPage.TabIndex = 0;
             this.productCategories_tabPage.Text = "Product Categories";
             this.productCategories_tabPage.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(31, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Name";
             // 
             // productCategories_panal
             // 
@@ -95,6 +109,55 @@ namespace CourseWork
             this.products_tabPage.TabIndex = 1;
             this.products_tabPage.Text = "Products";
             this.products_tabPage.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(413, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Price";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(31, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(180, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Category Name";
+            // 
+            // products_panel
+            // 
+            this.products_panel.AutoScroll = true;
+            this.products_panel.Location = new System.Drawing.Point(22, 33);
+            this.products_panel.Name = "products_panel";
+            this.products_panel.Size = new System.Drawing.Size(722, 329);
+            this.products_panel.TabIndex = 1;
+            // 
+            // shops_tabPage
+            // 
+            this.shops_tabPage.Controls.Add(this.shops_panel);
+            this.shops_tabPage.Location = new System.Drawing.Point(4, 22);
+            this.shops_tabPage.Name = "shops_tabPage";
+            this.shops_tabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.shops_tabPage.Size = new System.Drawing.Size(768, 375);
+            this.shops_tabPage.TabIndex = 2;
+            this.shops_tabPage.Text = "Shops";
+            this.shops_tabPage.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -140,14 +203,6 @@ namespace CourseWork
             this.undoToolStripMenuItem.Text = "undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
-            // products_panel
-            // 
-            this.products_panel.AutoScroll = true;
-            this.products_panel.Location = new System.Drawing.Point(23, 33);
-            this.products_panel.Name = "products_panel";
-            this.products_panel.Size = new System.Drawing.Size(722, 329);
-            this.products_panel.TabIndex = 1;
-            // 
             // cancel_menuBtn
             // 
             this.cancel_menuBtn.Image = global::CourseWork.Properties.Resources.cancel;
@@ -169,45 +224,13 @@ namespace CourseWork
             this.add_menuBtn.Size = new System.Drawing.Size(28, 20);
             this.add_menuBtn.Click += new System.EventHandler(this.add_menuBtn_Click);
             // 
-            // label1
+            // shops_panel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(211, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Category Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(43, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(56, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(413, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Price";
+            this.shops_panel.AutoScroll = true;
+            this.shops_panel.Location = new System.Drawing.Point(23, 20);
+            this.shops_panel.Name = "shops_panel";
+            this.shops_panel.Size = new System.Drawing.Size(722, 334);
+            this.shops_panel.TabIndex = 1;
             // 
             // AdministrationForm
             // 
@@ -225,6 +248,7 @@ namespace CourseWork
             this.productCategories_tabPage.PerformLayout();
             this.products_tabPage.ResumeLayout(false);
             this.products_tabPage.PerformLayout();
+            this.shops_tabPage.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -251,5 +275,7 @@ namespace CourseWork
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage shops_tabPage;
+        private System.Windows.Forms.FlowLayoutPanel shops_panel;
     }
 }

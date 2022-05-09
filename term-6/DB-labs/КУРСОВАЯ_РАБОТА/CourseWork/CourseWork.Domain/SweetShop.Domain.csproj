@@ -69,9 +69,15 @@
     <Compile Include="Migrations\202205090829134_InitialCreate2.Designer.cs">
       <DependentUpon>202205090829134_InitialCreate2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205091314541_InitialCreate3.cs" />
+    <Compile Include="Migrations\202205091314541_InitialCreate3.Designer.cs">
+      <DependentUpon>202205091314541_InitialCreate3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\LOCATION.cs" />
     <Compile Include="Models\PRODUCT.cs" />
     <Compile Include="Models\PRODUCT_CATEGORIES.cs" />
+    <Compile Include="Models\WAREHOUSE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SweetShopEntities.cs" />
   </ItemGroup>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205090829134_InitialCreate2.resx">
       <DependentUpon>202205090829134_InitialCreate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091314541_InitialCreate3.resx">
+      <DependentUpon>202205091314541_InitialCreate3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

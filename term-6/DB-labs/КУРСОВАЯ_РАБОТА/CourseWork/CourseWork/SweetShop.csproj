@@ -67,6 +67,12 @@
     <Compile Include="Creators\ProductEditor.Designer.cs">
       <DependentUpon>ProductEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Creators\ShopEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creators\ShopEditor.Designer.cs">
+      <DependentUpon>ShopEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHelper.cs" />
     <Compile Include="Presenter\BasePresenter.cs">
       <SubType>UserControl</SubType>
@@ -86,6 +92,12 @@
     <Compile Include="Presenter\ProductView.Designer.cs">
       <DependentUpon>ProductView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presenter\ShopView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenter\ShopView.Designer.cs">
+      <DependentUpon>ShopView.cs</DependentUpon>
+    </Compile>
     <Compile Include="SweetShop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,9 @@
     <EmbeddedResource Include="Creators\ProductEditor.resx">
       <DependentUpon>ProductEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Creators\ShopEditor.resx">
+      <DependentUpon>ShopEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presenter\BasePresenter.resx">
       <DependentUpon>BasePresenter.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presenter\ProductView.resx">
       <DependentUpon>ProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenter\ShopView.resx">
+      <DependentUpon>ShopView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SweetShop.resx">
       <DependentUpon>SweetShop.cs</DependentUpon>

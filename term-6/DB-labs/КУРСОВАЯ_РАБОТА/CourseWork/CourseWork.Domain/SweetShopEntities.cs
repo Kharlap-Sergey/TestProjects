@@ -20,8 +20,10 @@ namespace CourseWork.Domain
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<PRODUCT_CATEGORIES> PRODUCT_CATEGORIES { get; set; }
-        public DbSet<PRODUCT> PRODUCTS { get; set; }
+        public DbSet<PRODUCT_CATEGORIES> ProductCategories { get; set; }
+        public DbSet<PRODUCT> Products { get; set; }
+        public DbSet<WAREHOUSE> Warehouses { get; set; }
+        public DbSet<LOCATION> Locations { get; set; }
 
         public virtual void SOFT_PRODUCT_CATEGORY_DELETE(int? cATEGORY_ID)
         {

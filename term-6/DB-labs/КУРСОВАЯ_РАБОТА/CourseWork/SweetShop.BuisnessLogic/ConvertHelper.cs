@@ -63,5 +63,58 @@ namespace SweetShop.BusinessLogic
                 PRICE = product.Price
             };
         }
+
+        public static Warehouse Convert(WAREHOUSE warehouse, LOCATION location)
+        {
+            if (warehouse == null) throw new ArgumentNullException(nameof(warehouse));
+            return new Warehouse
+            {
+                Id = warehouse.ID,
+                Name = warehouse.NAME,
+                Location = Convert(location),
+                LocationId = location.ID
+            };
+        }
+
+        public static WAREHOUSE Convert(Warehouse warehouse)
+        {
+            if (warehouse == null) throw new ArgumentNullException(nameof(warehouse));
+            return new WAREHOUSE
+            {
+                ID = warehouse.Id,
+                NAME = warehouse.Name,
+                LOCATION_ID = warehouse.LocationId
+            };
+        }
+
+        public static Location Convert(LOCATION location)
+        {
+            if (location == null) throw new ArgumentNullException(nameof(location));
+
+            return new Location
+            {
+                Id = location.ID,
+                CountryCode = location.COUNTRY_CODE,
+                Location1 = location.LOCATION_1,
+                Location2 = location.LOCATION_2,
+                Location3 = location.LOCATION_3,
+                Location4 = location.LOCATION_4
+            };
+        }
+
+        public static LOCATION Convert(Location location)
+        {
+            if (location == null) throw new ArgumentNullException(nameof(location));
+
+            return new LOCATION
+            {
+                ID = location.Id,
+                COUNTRY_CODE = location.CountryCode,
+                LOCATION_1 = location.Location1,
+                LOCATION_2 = location.Location2,
+                LOCATION_3 = location.Location3,
+                LOCATION_4 = location.Location4
+            };
+        }
     }
 }

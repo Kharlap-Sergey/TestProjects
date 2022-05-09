@@ -16,7 +16,8 @@ namespace CourseWork
 {
     public partial class AdministrationForm : Form
     {
-        ProductsService _productsService = new ProductsService();
+        readonly ProductsService _productsService = new ProductsService();
+        readonly WarehouseService _warehouseService = new WarehouseService();
         public AdministrationForm()
         {
             InitializeComponent();
@@ -27,6 +28,10 @@ namespace CourseWork
             products_panel.AutoScroll = true;
             products_panel.FlowDirection = FlowDirection.TopDown;
             products_panel.WrapContents = false;
+
+            shops_panel.AutoScroll = true;
+            shops_panel.FlowDirection = FlowDirection.TopDown;
+            shops_panel.WrapContents = false;
         }
 
         private void cancel_menuBtn_Click(object sender, EventArgs e)
@@ -68,8 +73,17 @@ namespace CourseWork
         {
             var products = _productsService.GetProducts();
             var productCategories = _productsService.GetProductCategories();
-            this.productCategories_panal.Controls.Clear();
+            var shops = _warehouseService.GetWarehouses();
+
+            productCategories_panal.Controls.Clear();
             products_panel.Controls.Clear();
+            shops_panel.Controls.Clear();
+
+            shops.ForEach(
+                shop => this.shops_panel.Controls.Add(
+                    new ShopView(shop, ShopEditHandle)
+                )
+            );
             products.ForEach(
                 product => this.products_panel.Controls.Add(
                     new ProductView(product, ProductEditHandle)
@@ -92,6 +106,11 @@ namespace CourseWork
             if (pages_tabControl.SelectedIndex == products_tabPage.TabIndex)
             {
                 NewProduct();
+                return;
+            }
+            if (pages_tabControl.SelectedIndex == shops_tabPage.TabIndex)
+            {
+                NewShop();
                 return;
             }
         }
@@ -185,6 +204,44 @@ namespace CourseWork
 
         #endregion
 
+        #region shops
+
+
+        private void NewShop()
+        {
+            ShopEditHandle(new Warehouse(), (pc) => UpdatePresenter());
+        }
+
+        private void ShopEditHandle(Warehouse warehouse, Action<Warehouse> postAction)
+        {
+            var shopEditor = new ShopEditor(
+                warehouse,
+                (p) =>
+                {
+                    ExecuteUnderCatch(_);
+
+                    void _()
+                    {
+                        _warehouseService.AddOrUpdate(p);
+                        postAction.Invoke(p);
+                    }
+                },
+                p =>
+                {
+                    try
+                    {
+                        _warehouseService.Delete(p.Id);
+                    }
+                    finally
+                    {
+                        UpdatePresenter();
+                    }
+                }
+            );
+            shopEditor.Show();
+        }
+
+        #endregion
 
         private void ExecuteUnderCatch(Action action)
         {

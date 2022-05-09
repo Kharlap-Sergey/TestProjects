@@ -25,8 +25,8 @@ namespace SweetShop.BusinessLogic
         {
             var context = new SweetShopEntities();
 
-            var temp = context.PRODUCTS.Join(
-                context.PRODUCT_CATEGORIES,
+            var temp = context.Products.Join(
+                context.ProductCategories,
                 p => p.PRODUCT_CATEGORY_ID,
                 pc => pc.ID,
                 (p, pc) =>
@@ -45,14 +45,14 @@ namespace SweetShop.BusinessLogic
 
         public void AddOrUpdateProduct(Product product)
         {
-            _context.PRODUCTS.AddOrUpdate(ConvertHelper.Convert(product));
+            _context.Products.AddOrUpdate(ConvertHelper.Convert(product));
             _context.SaveChanges();
         }
 
         public Product DeleteProduct(int productId)
         {
-            var toRemove = _context.PRODUCTS.First(pcd => pcd.ID == productId);
-            var removed = _context.PRODUCTS.Remove(toRemove);
+            var toRemove = _context.Products.First(pcd => pcd.ID == productId);
+            var removed = _context.Products.Remove(toRemove);
             _context.SaveChanges();
             return ConvertHelper.Convert(removed);
         }
@@ -67,7 +67,7 @@ namespace SweetShop.BusinessLogic
             var context = new SweetShopEntities();
 
             if (!includeProducts)
-                return context.PRODUCT_CATEGORIES.ToList().Select(pc => ConvertHelper.Convert(pc)).ToList();
+                return context.ProductCategories.ToList().Select(pc => ConvertHelper.Convert(pc)).ToList();
             //return context.PRODUCTS.Join(
             //        context.PRODUCT_CATEGORIES,
             //        p => p.PRODUCT_CATEGORY_ID,
@@ -105,13 +105,13 @@ namespace SweetShop.BusinessLogic
         {
             var context = new SweetShopEntities();
 
-            var category = context.PRODUCT_CATEGORIES.FirstOrDefault(pc => pc.ID == id);
+            var category = context.ProductCategories.FirstOrDefault(pc => pc.ID == id);
             if (category == null)
                 return null;
 
             var categoryModel = ConvertHelper.Convert(category);
             if (includeProducts)
-                categoryModel.Products = context.PRODUCTS
+                categoryModel.Products = context.Products
                     .Where(p => p.PRODUCT_CATEGORY_ID == categoryModel.Id)
                     .ToList()
                     .Select(p => ConvertHelper.Convert(p, category))
@@ -124,14 +124,14 @@ namespace SweetShop.BusinessLogic
         {
             var context = new SweetShopEntities();
 
-            context.PRODUCT_CATEGORIES.AddOrUpdate(ConvertHelper.Convert(pc));
+            context.ProductCategories.AddOrUpdate(ConvertHelper.Convert(pc));
             context.SaveChanges();
         }
 
         public ProductCategory DeleteProductCategory(ProductCategory pc)
         {
-            var toRemove = _context.PRODUCT_CATEGORIES.First(pcd => pcd.ID == pc.Id);
-            var removed = _context.PRODUCT_CATEGORIES.Remove(toRemove);
+            var toRemove = _context.ProductCategories.First(pcd => pcd.ID == pc.Id);
+            var removed = _context.ProductCategories.Remove(toRemove);
             _context.SaveChanges();
             return ConvertHelper.Convert(removed);
         }
