@@ -29,20 +29,21 @@ namespace CourseWork
         /// </summary>
         private void InitializeComponent()
         {
-            this.suppliments_btn = new System.Windows.Forms.Button();
+            this.supplies_btn = new System.Windows.Forms.Button();
             this.administration_btn = new System.Windows.Forms.Button();
             this.statistic_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // suppliments_btn
+            // supplies_btn
             // 
-            this.suppliments_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.suppliments_btn.Location = new System.Drawing.Point(408, 221);
-            this.suppliments_btn.Name = "suppliments_btn";
-            this.suppliments_btn.Size = new System.Drawing.Size(424, 74);
-            this.suppliments_btn.TabIndex = 0;
-            this.suppliments_btn.Text = "suppliments";
-            this.suppliments_btn.UseVisualStyleBackColor = true;
+            this.supplies_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.supplies_btn.Location = new System.Drawing.Point(408, 221);
+            this.supplies_btn.Name = "supplies_btn";
+            this.supplies_btn.Size = new System.Drawing.Size(424, 74);
+            this.supplies_btn.TabIndex = 0;
+            this.supplies_btn.Text = "supplies";
+            this.supplies_btn.UseVisualStyleBackColor = true;
+            this.supplies_btn.Click += new System.EventHandler(this.supplies_btn_Click);
             // 
             // administration_btn
             // 
@@ -65,15 +66,15 @@ namespace CourseWork
             this.statistic_btn.Text = "statistic";
             this.statistic_btn.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // SweetShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 478);
             this.Controls.Add(this.statistic_btn);
             this.Controls.Add(this.administration_btn);
-            this.Controls.Add(this.suppliments_btn);
-            this.Name = "Form1";
+            this.Controls.Add(this.supplies_btn);
+            this.Name = "SweetShop";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -81,7 +82,7 @@ namespace CourseWork
 
         #endregion
 
-        private System.Windows.Forms.Button suppliments_btn;
+        private System.Windows.Forms.Button supplies_btn;
         private System.Windows.Forms.Button administration_btn;
         private System.Windows.Forms.Button statistic_btn;
     }

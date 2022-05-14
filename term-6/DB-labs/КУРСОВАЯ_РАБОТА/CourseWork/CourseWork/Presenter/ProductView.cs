@@ -8,7 +8,11 @@ namespace CourseWork.Presenter
         public ProductView()
             :base()
         {
+            Model = new Product();
+            Model.Category = new ProductCategory();
+
             InitializeComponent();
+            edit_btn.Visible = false;
         }
 
         public ProductView(

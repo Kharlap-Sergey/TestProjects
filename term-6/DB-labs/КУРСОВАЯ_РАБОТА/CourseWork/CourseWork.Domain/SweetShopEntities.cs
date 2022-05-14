@@ -24,6 +24,7 @@ namespace CourseWork.Domain
         public DbSet<PRODUCT> Products { get; set; }
         public DbSet<WAREHOUSE> Warehouses { get; set; }
         public DbSet<LOCATION> Locations { get; set; }
+        public DbSet<HISTORY_TYPE> HistoryTypes { get; set; }
 
         public virtual void SOFT_PRODUCT_CATEGORY_DELETE(int? cATEGORY_ID)
         {

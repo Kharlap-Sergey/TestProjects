@@ -7,7 +7,7 @@ namespace CourseWork
         public static bool ShowYesOrNow(string title, string message)
         {
             return (MessageBox.Show(message, title,
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
                 MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes);
         }
     }

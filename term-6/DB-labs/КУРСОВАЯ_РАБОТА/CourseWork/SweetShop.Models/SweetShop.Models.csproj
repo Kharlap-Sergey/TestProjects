@@ -50,10 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\HistoryType.cs" />
     <Compile Include="Entities\Location.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductCategory.cs" />
+    <Compile Include="Entities\ProductHistory.cs" />
     <Compile Include="Entities\Warehouse.cs" />
+    <Compile Include="Entities\History.cs" />
+    <Compile Include="Entities\WarehouseProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,5 +67,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

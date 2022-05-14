@@ -32,5 +32,21 @@ namespace CourseWork
                 this.Show();
             };
         }
+
+        private void supplies_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var supplies = new SuppliesForm()
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location,
+                Size = this.Size
+            };
+            supplies.Show();
+            supplies.Closed += (o, args) =>
+            {
+                this.Show();
+            };
+        }
     }
 }

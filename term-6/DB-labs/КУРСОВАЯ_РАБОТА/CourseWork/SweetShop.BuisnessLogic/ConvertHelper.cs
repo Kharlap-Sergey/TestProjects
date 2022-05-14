@@ -116,5 +116,27 @@ namespace SweetShop.BusinessLogic
                 LOCATION_4 = location.Location4
             };
         }
+
+        public static HistoryType Convert(HISTORY_TYPE historyType)
+        {
+            if (historyType == null) throw new ArgumentNullException(nameof(historyType));
+
+            return new HistoryType
+            {
+                Name = historyType.NAME,
+                Id = historyType.ID
+            };
+        }
+
+        public static HISTORY_TYPE Convert(HistoryType historyType)
+        {
+            if (historyType == null) throw new ArgumentNullException(nameof(historyType));
+
+            return new HISTORY_TYPE
+            {
+                NAME = historyType.Name,
+                ID = historyType.Id
+            };
+        }
     }
 }

@@ -73,7 +73,12 @@
     <Compile Include="Migrations\202205091314541_InitialCreate3.Designer.cs">
       <DependentUpon>202205091314541_InitialCreate3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205091531242_InitialCreate4.cs" />
+    <Compile Include="Migrations\202205091531242_InitialCreate4.Designer.cs">
+      <DependentUpon>202205091531242_InitialCreate4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\HISTORY_TYPE.cs" />
     <Compile Include="Models\LOCATION.cs" />
     <Compile Include="Models\PRODUCT.cs" />
     <Compile Include="Models\PRODUCT_CATEGORIES.cs" />
@@ -103,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205091314541_InitialCreate3.resx">
       <DependentUpon>202205091314541_InitialCreate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091531242_InitialCreate4.resx">
+      <DependentUpon>202205091531242_InitialCreate4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

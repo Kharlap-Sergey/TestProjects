@@ -67,6 +67,12 @@
     <Compile Include="Creators\ProductEditor.Designer.cs">
       <DependentUpon>ProductEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Creators\ProductWithCountEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creators\ProductWithCountEditor.Designer.cs">
+      <DependentUpon>ProductWithCountEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Creators\ShopEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     <Compile Include="Presenter\ProductCategoryView.Designer.cs">
       <DependentUpon>ProductCategoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presenter\ProductWithCountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenter\ProductWithCountView.Designer.cs">
+      <DependentUpon>ProductWithCountView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\ProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +109,12 @@
     </Compile>
     <Compile Include="Presenter\ShopView.Designer.cs">
       <DependentUpon>ShopView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppliesForm.Designer.cs">
+      <DependentUpon>SuppliesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SweetShop.cs">
       <SubType>Form</SubType>
@@ -115,6 +133,9 @@
     <EmbeddedResource Include="Creators\ProductEditor.resx">
       <DependentUpon>ProductEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Creators\ProductWithCountEditor.resx">
+      <DependentUpon>ProductWithCountEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Creators\ShopEditor.resx">
       <DependentUpon>ShopEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,11 +145,17 @@
     <EmbeddedResource Include="Presenter\ProductCategoryView.resx">
       <DependentUpon>ProductCategoryView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presenter\ProductWithCountView.resx">
+      <DependentUpon>ProductWithCountView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presenter\ProductView.resx">
       <DependentUpon>ProductView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presenter\ShopView.resx">
       <DependentUpon>ShopView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliesForm.resx">
+      <DependentUpon>SuppliesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SweetShop.resx">
       <DependentUpon>SweetShop.cs</DependentUpon>

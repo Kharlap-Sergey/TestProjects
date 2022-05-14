@@ -14,7 +14,7 @@ namespace CourseWork.Presenter
     public partial class BasePresenter<PresentationModel> : UserControl
     {
         protected readonly Action<PresentationModel, Action<PresentationModel>> _editHandle;
-        public PresentationModel Model { get; }
+        public PresentationModel Model { get; set; }
 
         public BasePresenter()
         {
