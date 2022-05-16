@@ -39,6 +39,9 @@
     <Reference Include="EntityFramework.Toolkit.Core, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.Toolkit.Core.1.0.6\lib\net45\EntityFramework.Toolkit.Core.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFrameworkExtras.EF5, Version=3.0.5.0, Culture=neutral, PublicKeyToken=afc61983f100d280, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFrameworkExtras.EF5.3.0.5\lib\net45\EntityFrameworkExtras.EF5.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -77,13 +80,43 @@
     <Compile Include="Migrations\202205091531242_InitialCreate4.Designer.cs">
       <DependentUpon>202205091531242_InitialCreate4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205151105382_noC.cs" />
+    <Compile Include="Migrations\202205151105382_noC.Designer.cs">
+      <DependentUpon>202205151105382_noC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205151310247_noC1.cs" />
+    <Compile Include="Migrations\202205151310247_noC1.Designer.cs">
+      <DependentUpon>202205151310247_noC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205151730116_noC2.cs" />
+    <Compile Include="Migrations\202205151730116_noC2.Designer.cs">
+      <DependentUpon>202205151730116_noC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205151742319_noC3.cs" />
+    <Compile Include="Migrations\202205151742319_noC3.Designer.cs">
+      <DependentUpon>202205151742319_noC3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205151805072_noC4.cs" />
+    <Compile Include="Migrations\202205151805072_noC4.Designer.cs">
+      <DependentUpon>202205151805072_noC4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205151807199_noC5.cs" />
+    <Compile Include="Migrations\202205151807199_noC5.Designer.cs">
+      <DependentUpon>202205151807199_noC5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\HISTORY.cs" />
+    <Compile Include="Models\HISTORY_PRODUCT.cs" />
     <Compile Include="Models\HISTORY_TYPE.cs" />
     <Compile Include="Models\LOCATION.cs" />
     <Compile Include="Models\PRODUCT.cs" />
     <Compile Include="Models\PRODUCT_CATEGORIES.cs" />
     <Compile Include="Models\WAREHOUSE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoredProceduresTypes\BaseHistoryEvent.cs" />
+    <Compile Include="StoredProceduresTypes\NewSalesProcedure.cs" />
+    <Compile Include="StoredProceduresTypes\NewSupplyProcedure.cs" />
+    <Compile Include="StoredProceduresTypes\ProductListType.cs" />
     <Compile Include="SweetShopEntities.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +144,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205091531242_InitialCreate4.resx">
       <DependentUpon>202205091531242_InitialCreate4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205151105382_noC.resx">
+      <DependentUpon>202205151105382_noC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205151310247_noC1.resx">
+      <DependentUpon>202205151310247_noC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205151730116_noC2.resx">
+      <DependentUpon>202205151730116_noC2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205151742319_noC3.resx">
+      <DependentUpon>202205151742319_noC3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205151805072_noC4.resx">
+      <DependentUpon>202205151805072_noC4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205151807199_noC5.resx">
+      <DependentUpon>202205151807199_noC5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

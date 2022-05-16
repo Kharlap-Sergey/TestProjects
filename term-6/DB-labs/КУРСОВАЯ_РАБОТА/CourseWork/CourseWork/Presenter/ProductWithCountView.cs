@@ -38,6 +38,7 @@ namespace CourseWork.Presenter
 
         private void UpdatePresenter(ProductHistory model = null)
         {
+            edit_btn.Enabled = edit_btn.Visible = _editHandler != null;
             Model = model ?? Model;
 
             name_textBox.Text = Model?.Product?.Name ?? "";

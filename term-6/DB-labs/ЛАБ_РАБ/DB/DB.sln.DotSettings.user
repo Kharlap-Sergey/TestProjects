@@ -3,4 +3,5 @@
   &lt;Assembly Path="D:\Project\TestProjects\term-6\DB-labs\ЛАБ_РАБ\DB\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll" /&gt;&#xD;
   &lt;Assembly Path="D:\Project\TestProjects\term-6\DB-labs\ЛАБ_РАБ\DB\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.SqlServer.Types.dll" /&gt;&#xD;
   &lt;Assembly Path="D:\Project\TestProjects\term-6\DB-labs\ЛАБ_РАБ\DB\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll" /&gt;&#xD;
+  &lt;Assembly Path="D:\Project\TestProjects\term-6\DB-labs\ЛАБ_РАБ\DB\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

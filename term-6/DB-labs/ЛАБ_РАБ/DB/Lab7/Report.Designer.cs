@@ -51,7 +51,6 @@ namespace Lab7
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report";
             this.Text = "Report";
-            this.Load += new System.EventHandler(this.Report_Load);
             this.ResumeLayout(false);
 
         }

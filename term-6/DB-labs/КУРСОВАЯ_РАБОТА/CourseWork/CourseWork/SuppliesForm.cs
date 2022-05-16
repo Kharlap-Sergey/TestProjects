@@ -104,6 +104,15 @@ namespace CourseWork
                 var selectedStore = (Warehouse) shop_comboBox.SelectedItem;
                 var selectedType = (HistoryType) type_comboBox.SelectedItem;
                 var date = DateTime.Parse(supplies_dateTimePicker.Text);
+                var selectedProducts = new List<(Product, int)>();
+                foreach (Control control in this.products_panel.Controls)
+                {
+                    var pwcv = (ProductWithCountView) control;
+                    var history = pwcv.Model;
+
+                    selectedProducts.Add((history.Product, history.Count));
+                }
+                _historyService.CreateNewHistory(selectedStore, selectedType, date, selectedProducts);
                 this.Close();
             }
             else

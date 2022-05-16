@@ -8,7 +8,6 @@ namespace SweetShop.Models.Entities
         public int Id { get; set; }
         public HistoryType HistoryType { get; set; }
         public int HistoryTypeId { get; set; }
-        public string Name { get; set; }
         public DateTime Date { get; set; }
         public virtual List<ProductHistory> ProductHistories { get; set; }
     }

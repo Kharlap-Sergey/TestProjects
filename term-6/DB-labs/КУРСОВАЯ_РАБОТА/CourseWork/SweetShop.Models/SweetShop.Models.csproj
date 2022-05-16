@@ -58,6 +58,7 @@
     <Compile Include="Entities\Warehouse.cs" />
     <Compile Include="Entities\History.cs" />
     <Compile Include="Entities\WarehouseProduct.cs" />
+    <Compile Include="Filters\HistoryFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

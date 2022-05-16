@@ -22,6 +22,8 @@ namespace CourseWork.Presenter
 
         protected virtual void UpdatePresenter(Warehouse model = null)
         {
+            edit_btn.Enabled = edit_btn.Visible = _editHandle != null;
+
             model = model ?? Model;
             name_TB.Text = model.Name;
             cureCode_TB.Text = model.Location.CountryCode;

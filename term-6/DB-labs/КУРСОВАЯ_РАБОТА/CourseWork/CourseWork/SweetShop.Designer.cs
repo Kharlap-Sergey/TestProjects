@@ -65,6 +65,7 @@ namespace CourseWork
             this.statistic_btn.TabIndex = 2;
             this.statistic_btn.Text = "statistic";
             this.statistic_btn.UseVisualStyleBackColor = true;
+            this.statistic_btn.Click += new System.EventHandler(this.statistic_btn_Click);
             // 
             // SweetShop
             // 

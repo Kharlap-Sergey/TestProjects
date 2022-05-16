@@ -18,25 +18,6 @@ namespace Lab7
             InitializeComponent();
         }
 
-        private void Report_Load(object sender, EventArgs e)
-        {
-            Products main = this.Owner as Products;
-            string strFIO;
-            if (main != null)
-            {
-                //strFIO=main.txtText.Text;
-                var rowView = main.pRODUCTSBindingSource.Current as DataRowView;
-                var row = rowView.Row as Db2DataSet.PRODUCTSRow;
-                strFIO = row.NAME;
-
-                ReportParameter pFIO = new ReportParameter("ReportParameter1", strFIO);
-                reportViewer1.LocalReport.SetParameters(new ReportParameter[] { pFIO });
-                this.reportViewer1.RefreshReport();
-            }
-
-            this.reportViewer1.RefreshReport();
-        }
-
         private void reportViewer1_Load(object sender, EventArgs e)
         {
 

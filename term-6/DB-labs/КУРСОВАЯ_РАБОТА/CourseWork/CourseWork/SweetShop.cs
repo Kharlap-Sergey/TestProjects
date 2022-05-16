@@ -48,5 +48,21 @@ namespace CourseWork
                 this.Show();
             };
         }
+
+        private void statistic_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var statisticsForm = new StatisticsForm()
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location,
+                Size = this.Size
+            };
+            statisticsForm.Show();
+            statisticsForm.Closed += (o, args) =>
+            {
+                this.Show();
+            };
+        }
     }
 }
