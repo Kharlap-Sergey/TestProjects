@@ -42,6 +42,9 @@
     <Reference Include="EntityFrameworkExtras.EF5, Version=3.0.5.0, Culture=neutral, PublicKeyToken=afc61983f100d280, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFrameworkExtras.EF5.3.0.5\lib\net45\EntityFrameworkExtras.EF5.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -104,6 +107,14 @@
     <Compile Include="Migrations\202205151807199_noC5.Designer.cs">
       <DependentUpon>202205151807199_noC5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205162025433_test.cs" />
+    <Compile Include="Migrations\202205162025433_test.Designer.cs">
+      <DependentUpon>202205162025433_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205162104283_new.cs" />
+    <Compile Include="Migrations\202205162104283_new.Designer.cs">
+      <DependentUpon>202205162104283_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\HISTORY.cs" />
     <Compile Include="Models\HISTORY_PRODUCT.cs" />
@@ -113,6 +124,7 @@
     <Compile Include="Models\PRODUCT_CATEGORIES.cs" />
     <Compile Include="Models\WAREHOUSE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StoredProceduresTypes\BaseHistoryEvent.cs" />
     <Compile Include="StoredProceduresTypes\NewSalesProcedure.cs" />
     <Compile Include="StoredProceduresTypes\NewSupplyProcedure.cs" />
@@ -163,7 +175,27 @@
     <EmbeddedResource Include="Migrations\202205151807199_noC5.resx">
       <DependentUpon>202205151807199_noC5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205162025433_test.resx">
+      <DependentUpon>202205162025433_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205162104283_new.resx">
+      <DependentUpon>202205162104283_new.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

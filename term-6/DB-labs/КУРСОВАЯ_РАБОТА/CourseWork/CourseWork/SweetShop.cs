@@ -15,6 +15,7 @@ namespace CourseWork
         public SweetShop()
         {
             InitializeComponent();
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
         }
 
         private void administration_btn_Click(object sender, EventArgs e)

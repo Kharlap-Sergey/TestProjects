@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CourseWork.Filters;
 using CourseWork.Presenter;
+using Reports;
 using SweetShop.BusinessLogic;
 using SweetShop.Models.Entities;
 using SweetShop.Models.Filters;
@@ -67,10 +68,15 @@ namespace CourseWork
                             h.HistoryType,
                             () =>
                             {
+                                
                                 var history = _historyService.GetHistory(h.Id);
                                 ShowFullHistory(history);
+                                var reportForm = new HistoryReportV2(
+                                    history
+                                );
+                                reportForm.Show();
                             }
-                            )
+                        )
                     );
                 }
                 );

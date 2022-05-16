@@ -1,7 +1,7 @@
 ﻿
-namespace CourseWork.Reports
+namespace Reports
 {
-    partial class HistoryReport
+    partial class HistoryReportV2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,32 @@ namespace CourseWork.Reports
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(13, 13);
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "ProductHistoriesDataSet";
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Reports.Report2.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(775, 425);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // HistoryReport
+            // HistoryReportV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "HistoryReport";
-            this.Text = "HistoryReport";
-            this.Load += new System.EventHandler(this.HistoryReport_Load);
+            this.Name = "HistoryReportV2";
+            this.Text = "HistoryReportV2";
+            this.Load += new System.EventHandler(this.HistoryReportV2_Load);
             this.ResumeLayout(false);
 
         }

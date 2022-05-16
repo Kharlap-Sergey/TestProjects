@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetShop.Models", "SweetSh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetShop.BusinessLogic", "SweetShop.BuisnessLogic\SweetShop.BusinessLogic.csproj", "{61082029-CC16-473B-941C-D84C454F942E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reports", "Reports\Reports.csproj", "{199BE365-354B-4907-A6B0-05110479AB0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{61082029-CC16-473B-941C-D84C454F942E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61082029-CC16-473B-941C-D84C454F942E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61082029-CC16-473B-941C-D84C454F942E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199BE365-354B-4907-A6B0-05110479AB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199BE365-354B-4907-A6B0-05110479AB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199BE365-354B-4907-A6B0-05110479AB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199BE365-354B-4907-A6B0-05110479AB0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
