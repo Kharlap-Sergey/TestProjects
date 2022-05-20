@@ -1,7 +1,7 @@
 ﻿
 namespace Reports
 {
-    partial class HistoryReportV2
+    partial class StatisticsReport
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@ namespace Reports
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Reports.HistoryReportV2.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Reports.StatisticsReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -43,15 +43,15 @@ namespace Reports
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // HistoryReportV2
+            // StatisticsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "HistoryReportV2";
-            this.Text = "HistoryReportV2";
-            this.Load += new System.EventHandler(this.HistoryReportV2_Load);
+            this.Name = "StatisticsReport";
+            this.Text = "StatisticsReport";
+            this.Load += new System.EventHandler(this.StatisticsReport_Load);
             this.ResumeLayout(false);
 
         }

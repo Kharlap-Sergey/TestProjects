@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CourseWork.Reports;
 using Microsoft.Reporting.WinForms;
@@ -29,43 +23,47 @@ namespace Reports
         {
             History = history;
         }
-        private void HistoryReport_Load(object sender, EventArgs e)
-        {
-            ReportParameter historyDate = new ReportParameter("HistoryDate", History.Date.Date.ToString());
-            var dataSource = new ReportDataSource()
-            {
-                Value = History.ProductHistories.Select(p => new HistoryReportProductModel
-                {
-                    Count = p.Count,
-                    Price = p.Product.Price,
-                    CategoryName = p.Product.Category?.Name,
-                    ProductName = p.Product.Name
-                }),
-                Name = "ProductHistoriesDataSet"
-            };
-            reportViewer1.LocalReport.SetParameters(new[] { historyDate });
-            reportViewer1.LocalReport.DataSources.Add(dataSource);
-            this.reportViewer1.RefreshReport();
-        }
 
         private void HistoryReportV2_Load(object sender, EventArgs e)
         {
 
-            ReportParameter historyDate = new ReportParameter("HistoryDate", History.Date.Date.ToString());
+            ReportParameter historyDate = new ReportParameter("Date", History.Date.Date.ToString("d"));
+            ReportParameter type = new ReportParameter("Type", History.HistoryType.Name);
+            Warehouse warehouse = new Warehouse();
+            decimal totalPrice = 0;
             var dataSource = new ReportDataSource()
             {
-                Value = History.ProductHistories.Select(p => new HistoryReportProductModel
+                Value = History.ProductHistories.Select(p =>
                 {
-                    Count = p.Count,
-                    Price = p.Product.Price,
-                    CategoryName = p.Product.Category?.Name,
-                    ProductName = p.Product.Name
-                }),
+                    warehouse = p.Warehouse;
+                    totalPrice += Math.Abs(p.Count) * p.Product.Price;
+
+                    return new HistoryReportProductModel
+                    {
+                        Count = Math.Abs(p.Count),
+                        Price = p.Product.Price,
+                        CategoryName = p.Product.Category?.Name,
+                        ProductName = p.Product.Name
+                    };
+                }).ToList(),
                 Name = "ProductHistoriesDataSet"
             };
-            //reportViewer1.LocalReport.SetParameters(new[] { historyDate });
+            ReportParameter to = new ReportParameter("To", warehouse.Name);
+            ReportParameter address = new ReportParameter("Address", GetAddress(warehouse));
+            ReportParameter price = new ReportParameter("TotalPrice", totalPrice.ToString());
+
+            reportViewer1.LocalReport.SetParameters(new[] { historyDate, to, type, address, price });
             reportViewer1.LocalReport.DataSources.Add(dataSource);
             this.reportViewer1.RefreshReport();
+        }
+
+        private string GetAddress(Warehouse w)
+        {
+            return $"{w.Location.CountryCode}, {w.Location.Location1} {w.Location.Location2}, {w.Location.Location3} {w.Location.Location4}";
+        }
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

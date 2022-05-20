@@ -32,13 +32,15 @@ namespace CourseWork
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.histories_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filterToolStripMenuItem});
+            this.filterToolStripMenuItem,
+            this.reportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(853, 24);
@@ -59,6 +61,13 @@ namespace CourseWork
             this.histories_panel.Name = "histories_panel";
             this.histories_panel.Size = new System.Drawing.Size(829, 411);
             this.histories_panel.TabIndex = 1;
+            // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.reportToolStripMenuItem.Text = "Report";
+            this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // StatisticsForm
             // 
@@ -83,5 +92,6 @@ namespace CourseWork
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel histories_panel;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
     }
 }

@@ -143,7 +143,7 @@ namespace SweetShop.BusinessLogic
             if (history == null)
                 return null;
 
-            var historyProducts = _context.HistoryProducts.Include(hp => hp.Product).Include(hp => hp.Warehouse)
+            var historyProducts = _context.HistoryProducts.Include(hp => hp.Product).Include(hp => hp.Warehouse).Include(hp => hp.Warehouse.Location)
                 .Where(hp => hp.HISTORY_ID == history.ID)
                 .ToList();
 

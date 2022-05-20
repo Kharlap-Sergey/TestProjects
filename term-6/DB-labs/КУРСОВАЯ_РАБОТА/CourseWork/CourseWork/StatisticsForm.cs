@@ -21,7 +21,12 @@ namespace CourseWork
         private readonly WarehouseService _warehouseService = new WarehouseService();
         private readonly ProductsService _productsService = new ProductsService();
         private readonly HistoryService _historyService = new HistoryService();
-        public HistoryFilter HistoryFilterModel { get; } = new HistoryFilter();
+
+        public HistoryFilter HistoryFilterModel { get; } = new HistoryFilter
+        {
+            FromDate = DateTime.Parse("2002-05-14 00:00:00.000"),
+            ToDate = DateTime.UtcNow
+        };
 
         public StatisticsForm()
         {
@@ -70,7 +75,7 @@ namespace CourseWork
                             {
                                 
                                 var history = _historyService.GetHistory(h.Id);
-                                ShowFullHistory(history);
+                                //ShowFullHistory(history);
                                 var reportForm = new HistoryReportV2(
                                     history
                                 );
@@ -94,6 +99,19 @@ namespace CourseWork
             };
 
             filterForm.Show();
+        }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            //ShowFullHistory(history);
+            var reportForm = new StatisticsReport(
+                new StatisticsReportModel
+                {
+                    Filter = HistoryFilterModel
+                }
+            );
+            reportForm.Show();
         }
     }
 }
