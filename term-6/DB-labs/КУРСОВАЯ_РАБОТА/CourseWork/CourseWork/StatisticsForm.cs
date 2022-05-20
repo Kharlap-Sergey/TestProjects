@@ -103,12 +103,14 @@ namespace CourseWork
 
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             //ShowFullHistory(history);
             var reportForm = new StatisticsReport(
                 new StatisticsReportModel
                 {
-                    Filter = HistoryFilterModel
+                    Filter = HistoryFilterModel,
+                    ProductsStatistics = _historyService.GetProductsStatistics(HistoryFilterModel.FromDate.Value, HistoryFilterModel.ToDate.Value),
+                    CategoryStatistics = _historyService.GetCategoryStatistics(HistoryFilterModel.FromDate.Value, HistoryFilterModel.ToDate.Value)
                 }
             );
             reportForm.Show();

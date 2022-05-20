@@ -91,6 +91,8 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CourseWork.Reports.HistoryReportProductModel.datasource" />
+    <None Include="Properties\DataSources\SweetShop.Models.Entities.CategoryStatistics.datasource" />
+    <None Include="Properties\DataSources\SweetShop.Models.Entities.ProductsStatistics.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SweetShop.Models\SweetShop.Models.csproj">

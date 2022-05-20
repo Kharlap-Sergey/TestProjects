@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Objects;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Runtime.InteropServices;
 using CourseWork.Domain.Models;
+using CourseWork.Domain.Models.Functions;
 using CourseWork.Domain.StoredProceduresTypes;
 using EntityFrameworkExtras.EF5;
 
@@ -58,5 +62,32 @@ namespace CourseWork.Domain
         {
             Database.ExecuteStoredProcedure(procedureValues);
         }
+
+        public virtual List<GET_STATISTICS_PRODUCTS_Model> GET_STATISTICS_PRODUCTS(DateTime from, DateTime to)
+        {
+            var fromParameter =
+                new SqlParameter("@FROM_DATE", from);
+            var toParameter = new SqlParameter("@TO_DATE",to);
+            var temp = Database
+                .SqlQuery<GET_STATISTICS_PRODUCTS_Model>("SELECT Product as ProductName, Category as CategoryName, Total_Count as TotalCount FROM GET_STATISTICS_PRODUCTS(@FROM_DATE,@TO_DATE)", fromParameter,
+                    toParameter)
+                .ToList();
+
+            return temp;
+        }
+        
+        public virtual List<GET_STATISTICS_CATEGORY_PRICE_Model> GET_STATISTICS_CATEGORY_PRICE(DateTime from, DateTime to)
+        {
+            var fromParameter =
+                new SqlParameter("@FROM_DATE", from);
+            var toParameter = new SqlParameter("@TO_DATE",to);
+            var temp = Database
+                .SqlQuery<GET_STATISTICS_CATEGORY_PRICE_Model>("SELECT *  FROM GET_STATISTICS_CATEGORY_PRICE(@FROM_DATE,@TO_DATE)", fromParameter,
+                    toParameter)
+                .ToList();
+
+            return temp;
+        }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Security.Cryptography;
 using CourseWork.Domain;
 using CourseWork.Domain.StoredProceduresTypes;
 using SweetShop.Models.Entities;
@@ -172,6 +173,29 @@ namespace SweetShop.BusinessLogic
                     }
                     ).ToList()
             };
+        }
+
+        public List<ProductsStatistics> GetProductsStatistics(DateTime from, DateTime to)
+        {
+            return _context.GET_STATISTICS_PRODUCTS(from, to).Select(
+                sp => new ProductsStatistics
+                {
+                    CategoryName = sp.CategoryName,
+                    ProductName = sp.ProductName,
+                    TotalCount = sp.TotalCount
+                }
+                ).ToList();
+        }
+
+        public List<CategoryStatistics> GetCategoryStatistics(DateTime from, DateTime to)
+        {
+            return _context.GET_STATISTICS_CATEGORY_PRICE(from, to).Select(
+                sp => new CategoryStatistics()
+                {
+                    Category = sp.CATEGORY,
+                    TotalIncome = sp.TOTAL_SUM,
+                }
+            ).ToList();
         }
     }
 }

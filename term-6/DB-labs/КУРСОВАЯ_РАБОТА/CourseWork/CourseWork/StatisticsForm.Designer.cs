@@ -78,7 +78,7 @@ namespace CourseWork
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StatisticsForm";
-            this.Text = "StatisticsForm";
+            this.Text = "Statistics";
             this.Load += new System.EventHandler(this.StatisticsForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -37,9 +37,9 @@ namespace CourseWork
             // supplies_btn
             // 
             this.supplies_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.supplies_btn.Location = new System.Drawing.Point(408, 221);
+            this.supplies_btn.Location = new System.Drawing.Point(66, 216);
             this.supplies_btn.Name = "supplies_btn";
-            this.supplies_btn.Size = new System.Drawing.Size(424, 74);
+            this.supplies_btn.Size = new System.Drawing.Size(766, 74);
             this.supplies_btn.TabIndex = 0;
             this.supplies_btn.Text = "supplies";
             this.supplies_btn.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@ namespace CourseWork
             // administration_btn
             // 
             this.administration_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.administration_btn.Location = new System.Drawing.Point(408, 114);
+            this.administration_btn.Location = new System.Drawing.Point(66, 114);
             this.administration_btn.Name = "administration_btn";
-            this.administration_btn.Size = new System.Drawing.Size(424, 74);
+            this.administration_btn.Size = new System.Drawing.Size(766, 74);
             this.administration_btn.TabIndex = 1;
             this.administration_btn.Text = "administration";
             this.administration_btn.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@ namespace CourseWork
             // statistic_btn
             // 
             this.statistic_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.statistic_btn.Location = new System.Drawing.Point(408, 325);
+            this.statistic_btn.Location = new System.Drawing.Point(66, 325);
             this.statistic_btn.Name = "statistic_btn";
-            this.statistic_btn.Size = new System.Drawing.Size(424, 74);
+            this.statistic_btn.Size = new System.Drawing.Size(766, 74);
             this.statistic_btn.TabIndex = 2;
             this.statistic_btn.Text = "statistic";
             this.statistic_btn.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@ namespace CourseWork
             this.Controls.Add(this.administration_btn);
             this.Controls.Add(this.supplies_btn);
             this.Name = "SweetShop";
-            this.Text = "Form1";
+            this.Text = "Candy shop sppliement system Kharlap Sergey";
             this.ResumeLayout(false);
 
         }

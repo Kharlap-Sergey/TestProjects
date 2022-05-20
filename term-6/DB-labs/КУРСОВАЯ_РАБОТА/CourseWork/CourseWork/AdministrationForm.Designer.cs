@@ -39,15 +39,13 @@ namespace CourseWork
             this.label1 = new System.Windows.Forms.Label();
             this.products_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.shops_tabPage = new System.Windows.Forms.TabPage();
+            this.shops_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancel_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.save_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.add_menuBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.shops_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.pages_tabControl.SuspendLayout();
             this.productCategories_tabPage.SuspendLayout();
             this.products_tabPage.SuspendLayout();
@@ -159,12 +157,19 @@ namespace CourseWork
             this.shops_tabPage.Text = "Shops";
             this.shops_tabPage.UseVisualStyleBackColor = true;
             // 
+            // shops_panel
+            // 
+            this.shops_panel.AutoScroll = true;
+            this.shops_panel.Location = new System.Drawing.Point(23, 20);
+            this.shops_panel.Name = "shops_panel";
+            this.shops_panel.Size = new System.Drawing.Size(722, 334);
+            this.shops_panel.TabIndex = 1;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolsToolStripMenuItem,
             this.cancel_menuBtn,
-            this.save_menuBtn,
             this.add_menuBtn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -176,8 +181,7 @@ namespace CourseWork
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.undoToolStripMenuItem});
+            this.saveToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.toolsToolStripMenuItem.Text = "tools";
@@ -185,23 +189,16 @@ namespace CourseWork
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "new";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.saveToolStripMenuItem.Text = "save";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "update";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.undoToolStripMenuItem.Text = "undo";
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // cancel_menuBtn
             // 
@@ -210,27 +207,12 @@ namespace CourseWork
             this.cancel_menuBtn.Size = new System.Drawing.Size(28, 20);
             this.cancel_menuBtn.Click += new System.EventHandler(this.cancel_menuBtn_Click);
             // 
-            // save_menuBtn
-            // 
-            this.save_menuBtn.Image = global::CourseWork.Properties.Resources.save;
-            this.save_menuBtn.Name = "save_menuBtn";
-            this.save_menuBtn.Size = new System.Drawing.Size(28, 20);
-            this.save_menuBtn.Click += new System.EventHandler(this.save_menuBtn_Click);
-            // 
             // add_menuBtn
             // 
             this.add_menuBtn.Image = global::CourseWork.Properties.Resources.add;
             this.add_menuBtn.Name = "add_menuBtn";
             this.add_menuBtn.Size = new System.Drawing.Size(28, 20);
             this.add_menuBtn.Click += new System.EventHandler(this.add_menuBtn_Click);
-            // 
-            // shops_panel
-            // 
-            this.shops_panel.AutoScroll = true;
-            this.shops_panel.Location = new System.Drawing.Point(23, 20);
-            this.shops_panel.Name = "shops_panel";
-            this.shops_panel.Size = new System.Drawing.Size(722, 334);
-            this.shops_panel.TabIndex = 1;
             // 
             // AdministrationForm
             // 
@@ -265,9 +247,7 @@ namespace CourseWork
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancel_menuBtn;
-        private System.Windows.Forms.ToolStripMenuItem save_menuBtn;
         private System.Windows.Forms.ToolStripMenuItem add_menuBtn;
         private System.Windows.Forms.FlowLayoutPanel productCategories_panal;
         private System.Windows.Forms.FlowLayoutPanel products_panel;

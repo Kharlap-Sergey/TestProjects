@@ -117,7 +117,7 @@ namespace CourseWork
             this.Controls.Add(this.supplies_dateTimePicker);
             this.Controls.Add(this.type_comboBox);
             this.Name = "SuppliesForm";
-            this.Text = "SuppliesForm";
+            this.Text = "Supplies";
             this.Load += new System.EventHandler(this.SuppliesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
