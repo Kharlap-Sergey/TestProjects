@@ -17,5 +17,6 @@ namespace CourseWork.Domain.Models
         [ForeignKey("WAREHOUSE_ID")]
         public virtual WAREHOUSE Warehouse { get; set; }
         public int COUNT { get; set; }
+        public decimal PRICE { get; set; }
     }
 }

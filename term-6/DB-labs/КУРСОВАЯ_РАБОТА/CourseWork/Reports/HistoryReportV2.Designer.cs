@@ -50,7 +50,7 @@ namespace Reports
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "HistoryReportV2";
-            this.Text = "HistoryReportV2";
+            this.Text = "History Report";
             this.Load += new System.EventHandler(this.HistoryReportV2_Load);
             this.ResumeLayout(false);
 

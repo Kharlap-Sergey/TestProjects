@@ -123,5 +123,24 @@ namespace CourseWork
                 );
             }
         }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+           
+                this.Enabled = true;
+                var administrationForm = new AdministrationForm
+                {
+                    StartPosition = FormStartPosition.Manual,
+                    Location = this.Location,
+                    Size = this.Size
+                };
+                administrationForm.Show();
+                administrationForm.Closed += (o, args) =>
+                {
+                    this.Enabled = true;
+                    products = _productsService.GetProducts();
+                    //shop = _warehouseService.GetWarehouses();
+                };
+        }
     }
 }

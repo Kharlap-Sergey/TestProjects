@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Security.Cryptography;
@@ -33,7 +34,7 @@ namespace SweetShop.BusinessLogic
         )
         {
             var selected = selectedProducts.Select(pc => new ProductListType
-                {Amount = pc.amount, ProductId = pc.product.Id}).ToList();
+                {Amount = pc.amount, ProductId = pc.product.Id, Price = pc.product.Price}).ToList();
 
             BaseHistoryEvent proc;
             if (historyType.Name.EndsWith("SALES", StringComparison.CurrentCultureIgnoreCase))
@@ -54,7 +55,7 @@ namespace SweetShop.BusinessLogic
             _context.NEW_HISTORY_EVENT(proc);
         }
 
-        public List<History> GetHistories(HistoryFilter filter)
+        public List<History> GetHistories(HistoryFilter filter, bool includeProducts = false)
         {
             var query = _context.Histories.Select(h => h).Include(h => h.HistoryType);
             if (filter.FromDate.HasValue)
@@ -85,13 +86,31 @@ namespace SweetShop.BusinessLogic
             var histories = query.ToList();
             return histories.Select(
                 history =>
-                    new History
+                {
+                    var h = new History
                     {
                         Id = history.ID,
                         Date = history.DATE,
                         HistoryType = ConvertHelper.Convert(history.HistoryType),
                         HistoryTypeId = history.HISTORY_TYPE_ID,
+                    };
+
+                    if (includeProducts)
+                    {
+                        h.ProductHistories = history?.HistoryProducts?
+                            .Select(
+                            historyProduct => 
+                            new ProductHistory
+                            {
+                                Count = Math.Abs(historyProduct.COUNT),
+                                History = h,
+                                Product = ConvertHelper.Convert(historyProduct.Product),
+                                Price = historyProduct.PRICE
+                            }
+                        ).ToList() ?? new List<ProductHistory>();
                     }
+                    return h;
+                }
             ).ToList();
 
 

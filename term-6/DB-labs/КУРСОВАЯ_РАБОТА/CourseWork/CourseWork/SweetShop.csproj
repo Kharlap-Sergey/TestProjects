@@ -86,6 +86,12 @@
       <DependentUpon>HistoryFiltersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHelper.cs" />
+    <Compile Include="JournalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JournalForm.Designer.cs">
+      <DependentUpon>JournalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\BasePresenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     </Compile>
     <Compile Include="Presenter\HistoryPresenter.Designer.cs">
       <DependentUpon>HistoryPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenter\JournalPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presenter\JournalPresenter.Designer.cs">
+      <DependentUpon>JournalPresenter.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenter\ProductCategoryView.cs">
       <SubType>UserControl</SubType>
@@ -172,6 +184,9 @@
     <EmbeddedResource Include="Filters\HistoryFiltersForm.resx">
       <DependentUpon>HistoryFiltersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JournalForm.resx">
+      <DependentUpon>JournalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presenter\BasePresenter.resx">
       <DependentUpon>BasePresenter.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presenter\HistoryPresenter.resx">
       <DependentUpon>HistoryPresenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presenter\JournalPresenter.resx">
+      <DependentUpon>JournalPresenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presenter\ProductCategoryView.resx">
       <DependentUpon>ProductCategoryView.cs</DependentUpon>

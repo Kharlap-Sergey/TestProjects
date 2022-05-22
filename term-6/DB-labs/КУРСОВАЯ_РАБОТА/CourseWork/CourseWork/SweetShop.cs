@@ -34,10 +34,10 @@ namespace CourseWork
             };
         }
 
-        private void supplies_btn_Click(object sender, EventArgs e)
+        private void journal_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var supplies = new SuppliesForm()
+            var supplies = new JournalForm()
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location,

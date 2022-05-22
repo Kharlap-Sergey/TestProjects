@@ -36,6 +36,7 @@ namespace CourseWork
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.edit_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // type_comboBox
@@ -85,9 +86,9 @@ namespace CourseWork
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(689, 73);
+            this.button1.Location = new System.Drawing.Point(670, 73);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 36);
+            this.button1.Size = new System.Drawing.Size(118, 36);
             this.button1.TabIndex = 5;
             this.button1.Text = "add";
             this.button1.UseVisualStyleBackColor = true;
@@ -104,11 +105,23 @@ namespace CourseWork
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // edit_btn
+            // 
+            this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.edit_btn.Location = new System.Drawing.Point(537, 73);
+            this.edit_btn.Name = "edit_btn";
+            this.edit_btn.Size = new System.Drawing.Size(127, 36);
+            this.edit_btn.TabIndex = 7;
+            this.edit_btn.Text = "edit";
+            this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
+            // 
             // SuppliesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -133,5 +146,6 @@ namespace CourseWork
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button edit_btn;
     }
 }

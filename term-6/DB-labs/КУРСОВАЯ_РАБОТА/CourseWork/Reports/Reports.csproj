@@ -68,6 +68,13 @@
     <Compile Include="HistoryReportV2.Designer.cs">
       <DependentUpon>HistoryReportV2.cs</DependentUpon>
     </Compile>
+    <Compile Include="JournalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JournalReport.Designer.cs">
+      <DependentUpon>JournalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JournalReportModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StatisticsReport.cs">
@@ -79,6 +86,10 @@
     <Compile Include="StatisticsReportModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="JournalReport.rdlc" />
+    <EmbeddedResource Include="JournalReport.resx">
+      <DependentUpon>JournalReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatisticsReport.rdlc" />
     <EmbeddedResource Include="HistoryReportV2.resx">
       <DependentUpon>HistoryReportV2.cs</DependentUpon>
@@ -91,6 +102,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CourseWork.Reports.HistoryReportProductModel.datasource" />
+    <None Include="Properties\DataSources\JournalReportModel.datasource" />
     <None Include="Properties\DataSources\SweetShop.Models.Entities.CategoryStatistics.datasource" />
     <None Include="Properties\DataSources\SweetShop.Models.Entities.ProductsStatistics.datasource" />
   </ItemGroup>

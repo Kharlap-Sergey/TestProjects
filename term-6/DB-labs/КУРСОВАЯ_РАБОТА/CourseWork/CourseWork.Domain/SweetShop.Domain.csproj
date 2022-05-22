@@ -111,9 +111,9 @@
     <Compile Include="Migrations\202205162025433_test.Designer.cs">
       <DependentUpon>202205162025433_test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205162104283_new.cs" />
-    <Compile Include="Migrations\202205162104283_new.Designer.cs">
-      <DependentUpon>202205162104283_new.cs</DependentUpon>
+    <Compile Include="Migrations\202205210649517_new1.cs" />
+    <Compile Include="Migrations\202205210649517_new1.Designer.cs">
+      <DependentUpon>202205210649517_new1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Functions\GET_STATISTICS_CATEGORY_PRICE_Model.cs" />
@@ -180,8 +180,8 @@
     <EmbeddedResource Include="Migrations\202205162025433_test.resx">
       <DependentUpon>202205162025433_test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205162104283_new.resx">
-      <DependentUpon>202205162104283_new.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205210649517_new1.resx">
+      <DependentUpon>202205210649517_new1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

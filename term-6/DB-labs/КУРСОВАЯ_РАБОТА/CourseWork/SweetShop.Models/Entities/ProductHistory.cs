@@ -9,5 +9,6 @@
         public History History { get; set; }
         public int HistoryId { get; set; }
         public int Count { get; set; }
+        public decimal Price { get; set; }
     }
 }

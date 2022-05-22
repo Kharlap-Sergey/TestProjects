@@ -32,6 +32,7 @@ namespace CourseWork
             this.supplies_btn = new System.Windows.Forms.Button();
             this.administration_btn = new System.Windows.Forms.Button();
             this.statistic_btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // supplies_btn
@@ -41,9 +42,9 @@ namespace CourseWork
             this.supplies_btn.Name = "supplies_btn";
             this.supplies_btn.Size = new System.Drawing.Size(766, 74);
             this.supplies_btn.TabIndex = 0;
-            this.supplies_btn.Text = "supplies";
+            this.supplies_btn.Text = "Journal";
             this.supplies_btn.UseVisualStyleBackColor = true;
-            this.supplies_btn.Click += new System.EventHandler(this.supplies_btn_Click);
+            this.supplies_btn.Click += new System.EventHandler(this.journal_btn_Click);
             // 
             // administration_btn
             // 
@@ -67,17 +68,29 @@ namespace CourseWork
             this.statistic_btn.UseVisualStyleBackColor = true;
             this.statistic_btn.Click += new System.EventHandler(this.statistic_btn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(257, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(413, 31);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Candy shop suppliement system ";
+            // 
             // SweetShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 478);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.statistic_btn);
             this.Controls.Add(this.administration_btn);
             this.Controls.Add(this.supplies_btn);
             this.Name = "SweetShop";
-            this.Text = "Candy shop sppliement system Kharlap Sergey";
+            this.Text = "Candy shop suppliement system Kharlap Sergey";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -86,6 +99,7 @@ namespace CourseWork
         private System.Windows.Forms.Button supplies_btn;
         private System.Windows.Forms.Button administration_btn;
         private System.Windows.Forms.Button statistic_btn;
+        private System.Windows.Forms.Label label1;
     }
 }
 
