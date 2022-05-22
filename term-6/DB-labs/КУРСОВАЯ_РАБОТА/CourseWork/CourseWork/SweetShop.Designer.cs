@@ -42,7 +42,7 @@ namespace CourseWork
             this.supplies_btn.Name = "supplies_btn";
             this.supplies_btn.Size = new System.Drawing.Size(766, 74);
             this.supplies_btn.TabIndex = 0;
-            this.supplies_btn.Text = "Journal";
+            this.supplies_btn.Text = "journal";
             this.supplies_btn.UseVisualStyleBackColor = true;
             this.supplies_btn.Click += new System.EventHandler(this.journal_btn_Click);
             // 
