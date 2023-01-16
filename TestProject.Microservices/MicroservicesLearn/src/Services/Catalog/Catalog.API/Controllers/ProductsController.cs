@@ -18,23 +18,20 @@ namespace Catalog.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
+        public async Task<IActionResult> GetProducts(string? category = null)
         {
-            return Ok(await ProductRepository.GetProductsAsync());
+            if(category == null)
+                return Ok(await ProductRepository.GetProductsAsync());
+
+            return Ok(await ProductRepository.GetProductsByCategoryAsync(category));
         }
 
-        [HttpGet("{idLlength(24)}")]
+        [HttpGet("{id:length(24)}")]
         public async Task<IActionResult> GetProductById(string id)
         {
             var p = await ProductRepository.GetProductByIdAsync(id);
             return p != null ? Ok(p) : NotFound();
 
-        }
-
-        [HttpGet("byCategory/{category}")]
-        public async Task<IActionResult> GetProductByCategory(string category)
-        {
-            return Ok(await ProductRepository.GetProductsByCategoryAsync(category));
         }
 
         [HttpPost]
