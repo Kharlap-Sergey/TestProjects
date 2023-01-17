@@ -13,7 +13,7 @@ namespace Catalog.Data.Mongo
             _catalogContext = catalogContext;
         }
 
-        public async Task CreateProuctAsync(Product product)
+        public async Task CreateProductAsync(Product product)
         {
             await _catalogContext.Products.InsertOneAsync(product);
         }

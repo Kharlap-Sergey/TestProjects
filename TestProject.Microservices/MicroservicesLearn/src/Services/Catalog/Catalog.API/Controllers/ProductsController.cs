@@ -37,7 +37,8 @@ namespace Catalog.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateProduct(Product product)
         {
-            await ProductRepository.CreateProuctAsync(product);
+            await ProductRepository.CreateProductAsync(product);
+
             return Ok();
         }
 
@@ -55,6 +56,12 @@ namespace Catalog.API.Controllers
             var res = await ProductRepository.DeleteProductAsync(id);
 
             return res ? Ok() : BadRequest();
+        }
+
+        [HttpDelete("testId")]
+        public IActionResult TestId()
+        {
+            return Ok("testId"); 
         }
     }
 }
